@@ -1,0 +1,34 @@
+version: '3.2'
+
+services:
+  api:
+    container_name: api-rocketnotes
+    build: ./Projeto_Notes_BE
+    restart: always
+    ports:
+      - 3333:3333
+    #se tiver depdencia
+    #depends_on:
+
+  spa:
+    container_name: spa-rocketnotes
+    build: ./Projeto_Notes_FE
+
+    volumes:
+    - spa-volume:/var/www/html
+
+  nginx:
+    container_name: nginx-rocketnotes
+    build: ./nginx
+    volumes:
+    - spa-volume:/var/www/html
+
+    ports:
+      - 8080:80
+
+    depends_on:
+      - spa
+      - api
+
+volumes:
+  spa-volume:
