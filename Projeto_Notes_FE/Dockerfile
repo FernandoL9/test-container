@@ -14,3 +14,5 @@ VOLUME /var/www/html
 WORKDIR /
 
 RUN rm -rf /temp/react
+
+# EXPOSE 5173
