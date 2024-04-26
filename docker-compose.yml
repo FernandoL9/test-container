@@ -24,7 +24,7 @@ services:
     - spa-volume:/var/www/html
 
     ports:
-      - 9015:9015
+      - 80:9015
 
     depends_on:
       - spa
