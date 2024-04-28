@@ -1,5 +1,3 @@
-version: '3.2'
-
 services:
   api:
     container_name: api-rocketnotes
@@ -24,7 +22,7 @@ services:
     - spa-volume:/var/www/html
 
     ports:
-      - 80:80
+      - 8080:80
 
     depends_on:
       - spa
